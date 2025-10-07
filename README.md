@@ -63,37 +63,37 @@ Follow these steps to set up **SentiGen** locally:
 git clone https://github.com/yourusername/sentigen.git
 cd sentigen
 ```
-## 🧱 Step 2: Create and Activate Virtual Environment
-# Using Conda (Recommended)
+# 🧱 Step 2: Create and Activate Virtual Environment
+## Using Conda (Recommended)
 ```bash
 conda create -n sentigen python=3.10 -y
 conda activate sentigen
 ```
-# Using venv
+## Using venv
 ```bash
 python3 -m venv venv
 source venv/bin/activate  # On Mac/Linux
 # venv\Scripts\activate    # On Windows
 ```
-## ⚙️ Step 3: Install Dependencies
+# ⚙️ Step 3: Install Dependencies
 ```bash
 # Install PyTorch
 conda install pytorch torchvision -c pytorch -y  # If using conda
 # Install other packages
 pip install -r requirements.txt
 ```
-## 💻 Step 4: Run the Application
+# 💻 Step 4: Run the Application
 ```bash
 streamlit run app.py
 ```
 **The app will automatically launch at http://localhost:8501**
 
-### 📖 How It Works
-# 🔧 Architecture
+# 📖 How It Works
+## 🔧 Architecture
 User Input → Sentiment Analyzer → Text Generator → Output Display
      ↓              ↓                    ↓              ↓
   Prompt      DistilBERT           GPT-2 Medium    Streamlit UI
-# 🧠 Workflow
+## 🧠 Workflow
 Input Processing: User enters a text prompt
 
 Sentiment Analysis: DistilBERT classifies sentiment (positive/negative/neutral)
@@ -104,7 +104,7 @@ Text Generation: GPT-2 generates coherent text matching the sentiment
 
 Output Display: Results shown with metrics and download option
 
-# 💡 Sentiment Conditioning
+## 💡 Sentiment Conditioning
 The system uses predefined prompt templates to guide text generation:
 
 Sentiment	Prompt Templates
@@ -112,27 +112,34 @@ Positive	“This is wonderful because...”, “I'm so happy that...”
 Negative	“This is disappointing because...”, “Unfortunately...”
 Neutral	“It is worth noting that...”, “From an objective perspective...”
 
-# 🎮 Usage Examples
+## 🎮 Usage Examples
 Example 1: Positive Generation
-Input: summer vacation at the beach
+
+**Input:**  
+
+summer vacation at the beach
 Detected Sentiment: POSITIVE (98% confidence)
-Output:
+
+
+**Output:**
+
 This is wonderful because summer vacation at the beach brings endless joy and relaxation. 
 The warm sun, gentle waves, and golden sand create perfect memories...
+
 Example 2: Negative Generation
-Input: dealing with Monday morning traffic
+
+**Input:** 
+
+dealing with Monday morning traffic
 Detected Sentiment: NEGATIVE (95% confidence)
-Output:
+
+
+**Output:**
+
 This is disappointing because dealing with Monday morning traffic drains energy and patience. 
 The endless queues and honking horns make for a frustrating start...
 
-### ⚙️ Configuration Options
-Parameter	Range	Default	Description
-Sentences	2–10	5	Approximate number of sentences
-Temperature	0.5–1.5	0.8	Creativity level (higher = more creative)
-Auto-detect	On/Off	On	Automatic sentiment detection
-
-# 📁 Project Structure
+## 📁 Project Structure
 ``` bash
 sentigen/
 ├── app.py                      # Main Streamlit application
@@ -143,9 +150,8 @@ sentigen/
 ├── requirements.txt            # Python dependencies
 ├── README.md                   # Project documentation
 ├── .gitignore                  # Git ignore file
-└── docs/                       # Additional documentation
 ```
-### 🧪 Testing
+# 🧪 Testing
 Run the test scripts to verify components:
 ```bash
 # Test sentiment analyzer
@@ -154,14 +160,14 @@ python test_sentiment_analyzer.py
 # Test text generator
 python test_generator.py
 ```
-## 🚧 Challenges & Solutions
+# 🚧 Challenges & Solutions
 Challenge	Problem	Solution
 Sentiment-Text Alignment	Generated text didn't always match sentiment	Implemented sentiment-specific prompt templates
 Generation Coherence	Output sometimes rambled or lost context	Tuned temperature and top-p sampling parameters
 Model Loading Time	First-time model downloads were slow	Added Streamlit caching with @st.cache_resource
 Neutral Detection	Model was too binary	Introduced confidence threshold (<0.6) for neutrality
 
-### 🔮 Future Enhancements
+# 🔮 Future Enhancements
 Support for multiple languages
 
 Fine-tune GPT-2 on sentiment-specific datasets
@@ -176,24 +182,24 @@ Support long-form content (articles, stories)
 
 Extend to emotion detection beyond sentiment
 
-### 📊 Model Performance
+# 📊 Model Performance
 Model	Task	Accuracy	Speed
 DistilBERT	Sentiment Analysis	~95%	<1s
 GPT-2 Medium	Text Generation	N/A	10–20s
 
-### 🤝 Contributing
+# 🤝 Contributing
 Contributions are welcome!
 Please feel free to fork the repo and submit a Pull Request.
 
-##3 📄 License
+# 📄 License
 This project is licensed under the MIT License.
 
-### 👨‍💻 Author
+# 👨‍💻 Author
 Krish Lakhani
 
-GitHub: @Krish-Lakhani19
+GitHub: [@Krish-Lakhani19](https://github.com/Krish-Lakhani19)
 
-LinkedIn: krishlakhani19
+LinkedIn: [krishlakhani19](https://www.linkedin.com/in/krishlakhani19/)
 
 Email: krishlakhani46767@gmail.com
 
